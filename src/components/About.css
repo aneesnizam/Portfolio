@@ -1,0 +1,203 @@
+#about {
+  height: auto;
+  position: relative;
+  padding: 60px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #242424;
+}
+#about::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: rgb(81, 81, 81);
+}
+
+#about div.me {
+  width: 60%;
+  position: relative;
+  top: auto;
+  padding-left: 30px;
+}
+#about div.me h4 {
+  text-align: center;
+  font-size: 40px;
+  color: aliceblue;
+  padding-bottom: 40px;
+  width: 30%;
+  margin: 0 auto;
+}
+#about div.me h3 {
+  font-size: 25px;
+color: #e8daff;
+  font-weight: 400;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.483);
+}
+#about div.me h2 {
+  color: #696868;
+  padding-bottom: 30px;
+}
+#about div.me h1 {
+  font-size: 40px;
+  color: white;
+}
+#about div.me p {
+  color: rgba(228, 228, 228, 0.848);
+  padding-bottom: 40px;
+  font-size: 20px;
+}
+#about div.me button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ece1fd;
+  color: black;
+}
+#about div.me button:hover {
+  background-color: #313131;
+  color: white;
+}
+#about .photo{
+width: 300px;
+height: auto;
+}
+
+#about .photo img{
+display: inline-block;
+width: 90%;
+height: 90%;
+margin: 0 auto;
+}
+@media all and (max-width:768px){
+  #about .photo{
+    width: 240px;
+   
+    }
+    #about {
+      padding: 60px 50px;
+
+    }
+    #about div.me p{
+      font-size: 16px;
+    }
+}
+@media all and (max-width:640px) {
+  #about div.me{
+width: 90%;
+padding-left: 0px;
+text-align: center;
+  }
+#about .photo{
+width: 230px;
+height: auto;
+margin: 0 auto;
+margin-bottom: 30px;
+}
+#about {
+  padding: 60px 50px;
+flex-wrap: wrap-reverse;
+}
+#about div.me h3 {
+  padding-bottom: 5px;
+
+}
+}
+@media all and (max-width:480px){
+  #about {
+    padding: 50px 20px; 
+  }
+  #about .photo{
+    width: 200px;
+    
+    margin-bottom: 20px;
+    }
+    #about div.me h3 {
+      font-size: 25px;
+
+      font-weight: 400;
+      padding-bottom: 4px;
+
+    }
+    #about div.me h2 {
+   font-size: 22px;
+      padding-bottom: 15px;
+    }
+    #about div.me h1 {
+      font-size: 35px;
+    
+    }#about div.me p {
+      padding-bottom: 25px;
+    }
+    #about .photo img{
+      width: 100%;
+    }
+
+}
+@media all and (max-width: 380px){
+  #about {
+    padding: 50px 20px; 
+  }
+  #about .photo{
+    width: 180px;
+    margin-bottom: 20px;
+    }
+    #about div.me h3 {
+      font-size: 25px;
+
+      font-weight: 400;
+      padding-bottom: 4px;
+
+    }
+    #about div.me h2 {
+   font-size: 18px;
+      padding-bottom: 15px;
+    }
+    #about div.me h1 {
+      font-size: 35px;
+    
+    }#about div.me p {
+      padding-bottom: 25px;
+      font-size: 15px;
+    }
+    #about .photo img{
+      width: 100%;
+    }
+}
+@media all and (max-width: 320px){
+  #about .photo{
+    width: 150px;
+    margin-bottom: 20px;
+    }
+    #about div.me h3 {
+      font-size: 23px;
+
+      font-weight: 400;
+      padding-bottom: 4px;
+
+    }
+    #about div.me h2 {
+   font-size: 15px;
+      padding-bottom: 15px;
+    }
+    #about div.me h1 {
+      font-size: 33px;
+    
+    }#about div.me p {
+      padding-bottom: 25px;
+      font-size: 13px;
+    
+    }
+    #about div.me button {
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-size: 12px;
+    }
+}

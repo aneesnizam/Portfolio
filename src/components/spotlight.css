@@ -1,0 +1,244 @@
+@font-face {
+  font-family: "Playwrite";
+  src: url("../assets/fonts/PlaywriteHU-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../assets/fonts/Raleway-Italic-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Monda";
+  src: url("../assets/fonts/Monda-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#spotlight {
+  padding-top: 110px;
+  text-align: center;
+  padding-bottom: 30px;
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #242424;
+}
+#spotlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background-color: rgb(81, 81, 81);
+}
+#spotlight div.top {
+}
+#spotlight div.top h1 {
+  font-size: 50px;
+  background: linear-gradient(90deg, rgb(79, 79, 79), white, rgb(79, 79, 79));
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 auto;
+  font-family: "Monda", sans-serif;
+  font-weight: 600;
+  animation: gradientMove 3s linear infinite;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+#spotlight div.top h3 {
+  font-size: 20px;
+  color: #727272;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+#spotlight div.bottom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(6px);
+  z-index: -1;
+}
+#spotlight div.bottom::after {
+  content: "";
+
+  position: absolute;
+  width: 418px;
+  height: 10px;
+  background-color: #242424;
+  box-shadow: 3px 1px 10px 2px rgba(0, 0, 0, 0.3);
+  bottom: 90px;
+  left: 357px;
+  display: none;
+}
+#spotlight div.bottom div.boxes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+
+  height: 130px;
+  position: relative;
+}
+
+#spotlight div.bottom div.boxes span.box {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #313131;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+#spotlight div.bottom div.boxes span.box:hover {
+  background-color: #505150;
+  transition: 0.5s;
+}
+
+#spotlight div.bottom div.boxes span.box img {
+  display: inline-block;
+  width: 40px;
+}
+
+#spotlight div.bottom div.boxes span.box1 {
+  align-self: flex-end;
+
+  padding: 2px 5px;
+}
+#spotlight div.bottom div.boxes span.box1 img {
+  width: 50px;
+}
+#spotlight div.bottom div.boxes span.box2 {
+}
+#spotlight div.bottom div.boxes span.box3 {
+}
+#spotlight div.bottom div.boxes span.box4 {
+  align-self: flex-start;
+}
+#spotlight div.bottom div.boxes span.box5 {
+  align-self: flex-end;
+}
+#spotlight div.bottom h1.monitor {
+  font-size: 45px;
+  font-family: "playwrite", cursive;
+  font-weight: 400;
+  background: linear-gradient(
+    to right,
+    rgb(30, 192, 30),
+    rgb(253, 199, 99),
+    rgb(249, 39, 39),
+    pink,
+    rgb(0, 157, 255)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 66px;
+  padding-left: 20px;
+}
+@media all and (max-width: 768px) {
+  #spotlight div.bottom div.boxes {
+
+    width: 70%;
+
+}
+#spotlight div.bottom h1.monitor{
+  font-size: 38px;
+}
+#spotlight {
+  padding-top: 110px;
+
+  padding-bottom: 3px;
+
+}
+}
+@media all and (max-width: 480px) {
+#spotlight{
+  padding-top: 100px;
+
+}
+#spotlight div.bottom div.boxes {
+
+  width: 80%;
+  margin: 0 auto;
+
+}
+#spotlight div.bottom h1.monitor{
+  font-size: 35px;
+  margin-top: 50px;
+}
+#spotlight div.top h3 {
+  font-size: 18px;
+}
+}
+@media all and (max-width: 380px){
+  #spotlight div.top h3 {
+    font-size: 16px;
+  }
+  #spotlight div.bottom h1.monitor{
+    font-size: 31px;
+    margin-top: 56px;
+    padding-left: 12px;
+  }
+  #spotlight div.top h3 {
+    font-size: 18px;
+  }
+  #spotlight div.bottom div.boxes {
+
+    width: 100%;
+   margin: 0 auto;
+  padding: 0px 10%;
+  }
+  #spotlight div.bottom div.boxes span.box {
+  
+    width: fit-content;
+    padding: 5px 10px;
+   
+  }
+  
+  #spotlight div.bottom div.boxes span.box img {
+ 
+    width: 35px;
+  }
+}
+@media all and (max-width: 320px){
+  #spotlight div.bottom{
+
+
+    width: 100wh;
+  position: relative;
+  }
+  #spotlight div.bottom div.boxes {
+    display: flex;
+    justify-content: center;
+    width: 90wh;
+   margin: 0 auto;
+  padding: 0px 10%;
+  }
+  #spotlight div.bottom div.boxes span.box img {
+    display: inline-block;
+    width: 90%;
+  }
+  #spotlight div.bottom div.boxes span.box1 img {
+    width: 100%;
+  }
+}

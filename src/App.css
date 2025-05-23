@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+.Openside{
+  background: none;
+  width: 35px;
+  position: fixed;
+  right: 5%;
+  top: 5%;
+  opacity: 0.8;
+  z-index: 4; 
+  border: none;
+  cursor: pointer;
+  display: none;
+  }
+  .Openside img{
+    filter: invert(1);
+  }
+#spotlight div.bottom {
+  background-image: url("./assets/images/table5.png");
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: center bottom 90px;
+  height: 590px;
+  position: relative;
+  margin-top: 50px;
+}
+@media all and (max-width: 980px) {
+
+  #about {
+    background-size: 250px;
+  }
+}
+@media all and (max-width:768px){
+  #spotlight div.bottom {
+
+    background-size: 400px;
+
+    background-position: center bottom 148px;
+
+  }
+}
+@media all and (max-width:640px){
+  .Openside{
+    display: block;
+  }
+}
+@media all and (max-width: 480px){
+
+  #spotlight div.bottom {
+
+    background-size: 340px;
+
+    background-position: center bottom 60px;
+    height: 450px;
+  } 
+  .Openside{
+    width: 25px;
+  }
+}
+@media all and (max-width: 380px){
+  #spotlight div.bottom {
+
+    background-size: 300px;
+
+    background-position: center bottom 60px;
+    height: 430px;
+  }  
+
+}

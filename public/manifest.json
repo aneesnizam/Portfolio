@@ -1,0 +1,40 @@
+{
+  "id": "/",
+  "theme_color": "#e6d7ff",
+  "background_color": "#2EC6FE",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "Screenshot2.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "Screenshot1.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "minimal-ui",
+  "dir": "auto",
+  "lang": "en-US",
+  "name": "AN Portfolio",
+  "short_name": "AN",
+  "start_url": "/",
+  "scope": "/"
+}

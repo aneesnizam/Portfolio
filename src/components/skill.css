@@ -1,0 +1,252 @@
+#skills {
+  position: relative;
+height: auto;
+  padding: 100px 100px;
+  background-color: #242424;
+  text-align: center;
+  overflow: hidden;
+}
+#skills h1 {
+  color: aliceblue;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+#skills .top {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:space-between;
+  gap: 60px;
+  height: auto;
+  z-index: 2;
+}
+#skills .top .box {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  padding: 20px;
+margin: 0 auto;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #313131;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+#skills .top .box:hover {
+  background-color: grey;
+  scale: 1.1;
+}
+
+#skills .top .box img {
+  display: block;
+  width: 100%;
+}
+#skills .bottom {
+  margin-bottom: 70px;
+}
+#skills .bottom .screen {
+  width: 350px;
+  height: 150px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #1c1f2b;
+  padding: 20px 10px 10px;
+  border-radius: 15px;
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+#skills .bottom .screen1 {
+  z-index: 2;
+  width: 350px;
+  height: 150px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #1c1f2b;
+  padding: 20px 10px 10px;
+  border-radius: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: white;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+#skills .bottom .screen::after,
+#skills .bottom .screen::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -3;
+  padding: 3px;
+  border-radius: 15px;
+  animation: 3s spin linear infinite;
+}
+#skills .bottom .screen::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+#skills .bottom .screen h1 {
+  margin-bottom: 20px;
+}
+#skills .bottom .screen p {
+  padding: 0 5px;
+}
+@media all and (max-width:768px){
+
+
+  #skills .top {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    gap: 40px;
+  }
+  #skills .top .box {
+    width: 60px;
+    height: 60px;
+    padding: 13px;
+  }
+}
+@media all and (max-width:640px){
+
+
+  #skills .top {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    gap: 30px;
+  }
+  #skills .top .box {
+    width: 60px;
+    height: 60px;
+    padding: 13px;
+  }
+}
+@media all and (max-width:480px){
+  #skills {
+    padding: 60px 30px;
+  }
+  #skills .top {
+ 
+    gap: 20px;
+  }
+  #skills .bottom .screen {
+    width: 300px;
+    height: 130px;
+    padding: 20px 10px 10px;
+ 
+  }
+  #skills .bottom .screen1 {
+
+    width: 300px;
+    height: 130px;
+
+    padding: 20px 10px 10px;
+  
+    left: 0;
+    top: 0;
+  
+  }
+
+  #skills .bottom .screen h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+  #skills .bottom .screen p {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+  #skills .top .box {
+    width: 52px;
+    height: 52px;
+    padding: 11px;
+ 
+  }
+  #skills .top .box:hover {
+    background-color: grey;
+    scale: 1.05;
+  }
+}
+@media all and (max-width:380px){
+  #skills {
+    padding: 60px 30px;
+  }
+  #skills .bottom .screen {
+    width: 250px;
+    height: 120px;
+    padding: 20px 10px 10px;
+ 
+  }
+  #skills .bottom .screen1 {
+
+    width: 250px;
+    height: 120px;
+
+    padding: 20px 10px 10px;
+  
+    left: 0;
+    top: 0;
+  
+  }
+
+  #skills .bottom .screen h1 {
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+  #skills .bottom .screen p {
+    padding: 0 5px;
+    font-size: 12px;
+  }
+  #skills .top .box {
+    width: 50px;
+    height: 50px;
+    padding: 11px;
+ 
+  }
+  #skills .top {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    gap: 15px;
+    
+  }
+}
+@media all and (max-width:320px){
+  #skills .top {
+ 
+    gap: 40px;
+  }
+}
