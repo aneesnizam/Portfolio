@@ -5,6 +5,7 @@ import Cryptography from "../assets/images/cryptography.png";
 import Chain from "../assets/images/supplychain1.png";
 import { useNavigate } from "react-router-dom";
 import Project1 from "../assets/images/project1.png";
+import Project2 from "../assets/images/gameproject.png";
 import View from "../assets/icons/next-button-icon.svg";
 
 export default function Portfolio() {
@@ -14,6 +15,9 @@ export default function Portfolio() {
   };
   const handleproject1 = () => {
     window.location.href = "https://letsgoforatrip.netlify.app/";
+  };
+    const handleproject2 = () => {
+    window.location.href = "https://playzio.netlify.app/";
   };
   const handleAcademic1 = () => {
     window.location.href = "https://github.com/aneesnizam/encryption";
@@ -67,13 +71,12 @@ export default function Portfolio() {
             </button>
           </div>
           <div className="box">
-            <img src={Project} alt="" />
-            <h3>Project 2</h3>
+            <img src={Project2} alt="" />
+            <h3>PLAYZIO</h3>
             <p>
-              Developed a full-stack web application using modern technologies,
-              focusing on performance, scalability, and user-friendly design.
+              Playzio is a web-based mini games platform featuring a collection of fun and engaging games built with multiple technologies.
             </p>
-            <button onClick={handleClick}>
+            <button onClick={handleproject2}>
               <img src={View} alt="" />
             </button>
           </div>
