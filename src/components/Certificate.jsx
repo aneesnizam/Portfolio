@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./certificate.css";
-import Certificate1 from "../assets/certificate/Fly High.png";
+import Certificate1 from "../assets/certificate/docker.png";
 import Certificate2 from "../assets/certificate/Udemy.jpg";
 import Certificate3 from "../assets/certificate/Workshop.jpg";
 import Certificate5 from "../assets/certificate/UI.png";
 import Certificate4 from "../assets/certificate/React.png";
+import microsoft from "../assets/certificate/microsoft.png";
 import logo1 from "../assets/icons/certificate-icon.png";
 
 export default function Certificate() {
@@ -12,7 +13,7 @@ export default function Certificate() {
   const [certificate, setCertificate] = useState([
     {
       id: 1,
-      title: "FLY HIGH WORKSHOP",
+      title: "Docker Foundations",
       image: Certificate1,
     },
     {
@@ -35,6 +36,11 @@ export default function Certificate() {
       title: "UI ENGINEER",
       image: Certificate5,
     },
+    {
+      id: 6,
+      title: "Career Essentials in Generative AI",
+      image: microsoft,
+    },
   ]);
 
   const handleMouseEnter = (id) => {
@@ -55,23 +61,24 @@ export default function Certificate() {
               onMouseEnter={() => handleMouseEnter(cert.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              {cert.title}
+              {cert.title.toUpperCase()}
             </li>
           ))}
           <div className="boxx1">
-          {hovered && (
-            <div className="boxx">
-              <img
-                className="certificate"
-                src={certificate.find((cert) => cert.id === hovered).image}
-                alt={certificate.find((cert) => cert.id === hovered).title}
-              />
-            </div>
-          )}
+            {hovered && (
+              <div className="boxx">
+                <img
+                  className="certificate"
+                  src={certificate.find((cert) => cert.id === hovered).image}
+                  alt={certificate.find((cert) => cert.id === hovered).title}
+                />
+              </div>
+            )}
           </div>
-       
         </ul>
-        <div className="box-out">   {hovered && (
+        <div className="box-out">
+          {" "}
+          {hovered && (
             <div className="boxx">
               <img
                 className="certificate"
@@ -81,8 +88,7 @@ export default function Certificate() {
               />
             </div>
           )}
-          </div>
-     
+        </div>
       </div>
     </section>
   );

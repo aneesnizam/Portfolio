@@ -1,0 +1,202 @@
+.view-more-page {
+  background-color: #242424;
+  color: aliceblue;
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px 10% 50px;
+  position: relative;
+}
+
+.view-more-page h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.project-category h2 {
+  color: #f0f0f0;
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #cdc1ff;
+}
+
+.back-button {
+  position: absolute;
+  top: 55px;
+  left: 5%;
+  background-color: #3a3a3a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #4f4f4f;
+  transform: scale(1.1);
+}
+
+.total-works-count {
+  position: absolute;
+  top: 55px;
+  right: 5%;
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.project-entry {
+  display: flex;
+  background-color: #191919;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid #3a3a3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-entry:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-image {
+  flex: 0 0 300px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-details {
+  flex: 1;
+  padding: 25px 30px;
+}
+
+.project-details h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.project-details p {
+  color: #c5c5c5;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-tech span {
+  background-color: #444;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.project-links-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  display: inline-block;
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.project-link:hover {
+  background-color: #2563eb;
+}
+
+.project-link.github {
+  background-color: transparent;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.project-link.github:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.project-link.disabled,
+.project-link.github.disabled {
+  background-color: #555;
+  border-color: #555;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.project-link.disabled:hover,
+.project-link.github.disabled:hover {
+  background-color: #555;
+  border-color: #555;
+  color: #aaa;
+}
+
+@media all and (max-width: 900px) {
+  .view-more-page {
+    padding: 50px 5%;
+  }
+  .back-button {
+    top: 15px;
+    left: 15px;
+  }
+  .view-more-page h1 {
+    margin-top: 50px;
+  }
+  .project-entry {
+    flex-direction: column;
+  }
+  .project-image {
+    flex-basis: 200px;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .view-more-page h1 {
+    font-size: 32px;
+  }
+  .project-category h2 {
+    font-size: 24px;
+  }
+  .project-details {
+    padding: 20px;
+  }
+  .project-details h3 {
+    font-size: 20px;
+  }
+}

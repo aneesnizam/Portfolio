@@ -1,122 +1,120 @@
 import React, { useState } from "react";
 import "./portfolio.css";
-import Project from "../assets/images/project.webp";
+import { useNavigate } from "react-router-dom";
+
+// Import project assets
 import Cryptography from "../assets/images/cryptography.png";
 import Chain from "../assets/images/supplychain1.png";
-import { useNavigate } from "react-router-dom";
 import Project1 from "../assets/images/project1.png";
 import Project2 from "../assets/images/gameproject.png";
 import View from "../assets/icons/next-button-icon.svg";
+import Spendwise from "../assets/images/spendwise.png";
+
+// --- DATA ARRAYS ---
+const academicProjectsData = [
+  {
+    id: "acad1",
+    image: Cryptography,
+    title: "Enhanced Cryptographic Toolbox",
+    description:
+      "A personalized solution for text-based cryptography for communication using sophisticated ciphers.",
+    link: "https://github.com/aneesnizam/encryption",
+  },
+  {
+    id: "acad2",
+    image: Chain,
+    title: "Pharmaceutical Supply Chain Using Blockchain",
+    description:
+      "A blockchain-based system to enhance transparency and security in pharmaceutical supply chains, focusing on detecting counterfeit drugs.",
+    link: "https://github.com/aneesnizam/Pharmaceutical-Supply-Chain",
+  },
+];
+
+const personalProjectsData = [
+  {
+    id: "pers1",
+    image: Project1,
+    title: "Efficiently Estimate Your Travel Expenses",
+    description:
+      "A web-based tool that helps users estimate travel expenses by calculating fuel costs based on distance, fuel efficiency, and fuel price.",
+    link: "https://letsgoforatrip.netlify.app/",
+  },
+  {
+    id: "pers2",
+    image: Project2,
+    title: "PLAYZIO",
+    description:
+      "A web-based mini-games platform featuring a collection of fun and engaging games built with multiple technologies.",
+    link: "https://playzio.netlify.app/",
+  },
+  {
+    id: "pers3",
+    image: Spendwise,
+    title: "SPEND WISE",
+    description:
+      "A full-featured expense tracking web application designed to help users manage their daily spending efficiently.",
+    link: "https://spendwise.deno.dev",
+  },
+];
 
 export default function Portfolio() {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/wip");
+  const [content, setContent] = useState("academic");
+
+  const openLink = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
   };
-  const handleproject1 = () => {
-    window.location.href = "https://letsgoforatrip.netlify.app/";
-  };
-    const handleproject2 = () => {
-    window.location.href = "https://playzio.netlify.app/";
-  };
-  const handleAcademic1 = () => {
-    window.location.href = "https://github.com/aneesnizam/encryption";
-  };
-    const handleAcademic2 = () => {
-    window.location.href = "https://github.com/aneesnizam/Pharmaceutical-Supply-Chain";
-  };
-  const [content, setContent] = useState("content1");
-  const data = () => {
-    if (content === "content1") {
-      return (
-        <>
-          <div className="box">
-            <img src={Cryptography} alt="" />
-            <h3> Enhanced Cryptographic Toolbox</h3>
-            <p>
-              A personalized solution for text-based cryptography for
-              communication using sophisticated ciphers
-            </p>
-            <button onClick={handleAcademic1}>
-              <img src={View} alt="" />
-            </button>
-          </div>
-          <div className="box">
-            <img src={Chain} alt="" />
-            <h3>Pharmaceutical Supply Chain Using Blockchain</h3>
-            <p>
-              This project aims to developed a blockchain-based system to
-              enhance transparency and security in pharmaceutical supply chains,
-              focusing on detecting counterfeit drugs.
-            </p>
-            <button onClick={handleAcademic2}>
-              <img src={View} alt="" />
-            </button>
-          </div>
-        </>
-      );
-    } else if (content === "content2") {
-      return (
-        <>
-          <div className="box">
-            <img src={Project1} alt="" />
-            <h3>Efficiently Estimate Your Travel Expenses</h3>
-            <p>
-              The Fuel Cost Calculator is a web-based tool that helps users
-              estimate their travel expenses by calculating fuel costs based on
-              distance, fuel efficiency, and fuel price.
-            </p>
-            <button onClick={handleproject1}>
-              <img src={View} alt="" />
-            </button>
-          </div>
-          <div className="box">
-            <img src={Project2} alt="" />
-            <h3>PLAYZIO</h3>
-            <p>
-              Playzio is a web-based mini games platform featuring a collection of fun and engaging games built with multiple technologies.
-            </p>
-            <button onClick={handleproject2}>
-              <img src={View} alt="" />
-            </button>
-          </div>
-          <div className="box">
-            <img src={Project} alt="" />
-            <h3>Project 3</h3>
-            <p>
-              Developed a full-stack web application using modern technologies,
-              focusing on performance, scalability, and user-friendly design.
-            </p>
-            <button onClick={handleClick}>
-              <img src={View} alt="" />
-            </button>
-          </div>
-        </>
-      );
-    }
-  };
+
+  const ProjectBox = ({ project }) => (
+    <div className="box">
+      <img src={project.image} alt={project.title} />
+      <h3>{project.title}</h3>
+      <p>{project.description}</p>
+      <button onClick={() => openLink(project.link)}>
+        <img src={View} alt="View Project" />
+      </button>
+    </div>
+  );
+
   return (
     <section id="portfolio">
       <h1>Portfolio</h1>
       <div className="top">
         <div
-          onClick={() => setContent("content1")}
-          className={`hov ${content === "content2" ? "active1" : ""}`}
+          onClick={() => setContent("academic")}
+          className={`hov ${content === "personal" ? "active1" : ""}`}
         >
           <ul>
             <li>Academic Projects</li>
           </ul>
         </div>
         <div
-          onClick={() => setContent("content2")}
-          className={`hov ${content === "content1" ? "active2" : ""}`}
+          onClick={() => setContent("personal")}
+          className={`hov ${content === "academic" ? "active2" : ""}`}
         >
           <ul>
             <li>Personal Projects</li>
           </ul>
         </div>
       </div>
-      <div className="bottom">{data()}</div>
+
+      <div className="portfolio-content-wrapper">
+        <div className="bottom">
+          {content === "academic"
+            ? academicProjectsData.map((project) => (
+                <ProjectBox key={project.id} project={project} />
+              ))
+            : personalProjectsData.map((project) => (
+                <ProjectBox key={project.id} project={project} />
+              ))}
+        </div>
+
+        <div className="view-more-container">
+          <p className="view-more" onClick={() => navigate("/viewmore")}>
+            View More <span className="icon">→</span>
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,18 +1,22 @@
-const CACHE_NAME = "essential-cache";
+const CACHE_NAME = "essential-cache-v1";
 
 const urlsToCache = [
   "/index.html",
   "/offline.html",
-  "/asset/offline-vedio.mp4",
+  "/asset/offline-vedio.mp4", // Make sure this path is correct and accessible
 ];
 
+// INSTALL
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
     })
   );
+  self.skipWaiting(); // Activate the SW immediately after install
 });
+
+// FETCH
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     fetch(event.request)
@@ -20,12 +24,14 @@ self.addEventListener("fetch", (event) => {
         return response;
       })
       .catch(() => {
-        return caches.match(event.request).then((cacheresponse) => {
-          return cacheresponse || caches.match("/offline.html");
+        return caches.match(event.request).then((cachedResponse) => {
+          return cachedResponse || caches.match("/offline.html");
         });
       })
   );
 });
+
+// ACTIVATE
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -38,4 +44,5 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
+  self.clients.claim(); // Take control of uncontrolled clients
 });

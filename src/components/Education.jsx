@@ -12,20 +12,21 @@ const Education = () => {
 
     const handleScroll = () => {
       const educationSection = document.getElementById("education");
+      if (!educationSection) return;
+
       const sectionTop = educationSection.getBoundingClientRect().top;
       const screenHeight = window.innerHeight;
 
-      if (sectionTop < screenHeight / 1.5) {
+      if (sectionTop < screenHeight / 1.5 && verticalLine) {
         verticalLine.style.height = "100%";
       }
 
       items.forEach((item, index) => {
         if (item) {
-          let itemTop = item.getBoundingClientRect().top;
+          const itemTop = item.getBoundingClientRect().top;
           if (itemTop < screenHeight * 0.8) {
             setTimeout(() => {
               item.classList.add("show");
-              right.classList.add("show");
             }, index * 400);
           }
         }
@@ -35,6 +36,7 @@ const Education = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const [educationData] = useState([
     {
       title: "B.Tech in CSE",
@@ -43,18 +45,19 @@ const Education = () => {
       date: " 2021 - 2025",
     },
     {
-      title: " Senior Secondary (XII), DHSC Kerala",
-      mark: " Percentage: 87.10%",
-      place: "G H S S Bharathanoor, Trivandrum,Kerala,India",
+      title: "Senior Secondary (XII), DHSC Kerala",
+      mark: "Percentage: 87.10%",
+      place: "G H S S Bharathanoor, Trivandrum, Kerala, India",
       date: "2021",
     },
     {
-      title: " Secondary (X), KERALA SSLC BOARD",
-      mark: " Percentage: 98.89%",
-      place: "G V H S S Kadakkal,Kollam,Kerala,India",
+      title: "Secondary (X), KERALA SSLC BOARD",
+      mark: "Percentage: 98.89%",
+      place: "G V H S S Kadakkal, Kollam, Kerala, India",
       date: "2019",
     },
   ]);
+
   return (
     <section id="education">
       <h2>
@@ -63,7 +66,6 @@ const Education = () => {
       </h2>
       <div className="timeline">
         <div className="vertical" ref={verticalRef}></div>
-
         {educationData.map((edu, index) => (
           <div
             key={index}

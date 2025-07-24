@@ -8,9 +8,13 @@ import Lc from "../assets/skills/c-program-icon.png";
 import Lsass from "../assets/skills/sass-icon.png";
 import Lgitlab from "../assets/skills/gitlab-icon.png";
 import Lreact from "../assets/skills/react-js-icon.png";
-import Ljquery from "../assets/skills/jquery-icon.png";
+import Ltailwind from "../assets/skills/tailwind-css-icon.png";
 import Lgithub from "../assets/skills/github-icon.png";
 import Lpython from "../assets/skills/python-icon.png";
+import Ldjango from "../assets/skills/django-icon.png";
+import Lmongodb from "../assets/skills/mongodb-icon.png";
+import Lpostgresql from "../assets/skills/postgresql-icon.png";
+import Lpostman from "../assets/skills/postman-icon.png";
 
 export default function Skills() {
   const [skills, setSkills] = useState([
@@ -57,8 +61,38 @@ export default function Skills() {
     },
     {
       id: "10",
-      title: "Jquery",
-      description: "A JavaScript library for easier DOM manipulation.",
+      title: "Tailwind",
+      description: "A utility-first CSS framework for rapid UI development.",
+    },
+    {
+      id: "11",
+      title: "Django",
+      description:
+        "A high-level Python web framework for rapid, secure, and scalable development.",
+    },
+    {
+      id: "12",
+      title: "Python",
+      description:
+        "A versatile, high-level programming language known for its readability and simplicity.",
+    },
+    {
+      id: "13",
+      title: "MongoDB",
+      description:
+        "A popular NoSQL database that stores data in flexible, JSON-like documents.",
+    },
+    {
+      id: "14",
+      title: "PostgreSQL",
+      description:
+        "A powerful, open-source object-relational database system known for reliability.",
+    },
+    {
+      id: "15",
+      title: "Postman",
+      description:
+        "An API platform for developers to design, build, test, and iterate on their APIs.",
     },
   ]);
   const defaultSkill = {
@@ -143,7 +177,17 @@ export default function Skills() {
                   ? Lgitlab
                   : skill.title === "C Programming"
                   ? Lc
-                  : Ljquery
+                  : skill.title === "Python"
+                  ? Lpython
+                  : skill.title === "Django"
+                  ? Ldjango
+                  : skill.title === "MongoDB"
+                  ? Lmongodb
+                  : skill.title === "PostgreSQL"
+                  ? Lpostgresql
+                  : skill.title === "Postman"
+                  ? Lpostman
+                  : Ltailwind
               }
               alt={skill.title}
             />

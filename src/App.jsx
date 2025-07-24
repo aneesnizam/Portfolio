@@ -15,17 +15,12 @@ import Certificate from "./components/Certificate";
 import Icon from "./components/Icon";
 import Gallery from "./components/Gallery";
 import Offline from "./components/Offline";
-import MenuLogo from "./assets/icons/menu.svg"
-
-import Cryptography from "./assets/images/cryptography1.jpg";
-import Chain from "./assets/images/supplychain.jpg";
-import Project from "./assets/images/project.webp";
-import Certificate1 from "./assets/certificate/Fly High.png";
+import MenuLogo from "./assets/icons/menu.svg";
 import Certificate2 from "./assets/certificate/Udemy.jpg";
 import Certificate3 from "./assets/certificate/Workshop.jpg";
 import Certificate5 from "./assets/certificate/UI.png";
 import Certificate4 from "./assets/certificate/React.png";
-
+import ViewMore from "./components/Portfolioview/ViewMore";
 import BgImage1 from "./assets/images/table5.png";
 import BgImage2 from "./assets/images/me.png";
 
@@ -54,10 +49,6 @@ export default function App() {
 
   useEffect(() => {
     const imageList = [
-      Cryptography,
-      Chain,
-      Project,
-      Certificate1,
       Certificate2,
       Certificate3,
       Certificate4,
@@ -81,14 +72,15 @@ export default function App() {
 
     preloadImages();
   }, []);
-const [isNavOpen,setIsNavOpen] =useState(false);
-  
-const closeBar = () => {
-  setIsNavOpen(false);
-  }
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const closeBar = () => {
+    setIsNavOpen(false);
+  };
   const openBar = () => {
- setIsNavOpen(true);
-  }
+    setIsNavOpen(true);
+  };
+
   return (
     <Router>
       {loading ? (
@@ -96,15 +88,22 @@ const closeBar = () => {
       ) : (
         <>
           <Offline />
-         
+
           <Routes>
             <Route
               path="/"
               element={
                 <>
-                 <button className="Openside" onClick={openBar}><img src={MenuLogo} alt="" /></button>
-                  <Nav deferredPrompt={deferredPrompt} isInstall={isInstall}  closeBar={closeBar} isNavOpen={ isNavOpen }/>
-                  <Spotlight  />
+                  <button className="Openside" onClick={openBar}>
+                    <img src={MenuLogo} alt="" />
+                  </button>
+                  <Nav
+                    deferredPrompt={deferredPrompt}
+                    isInstall={isInstall}
+                    closeBar={closeBar}
+                    isNavOpen={isNavOpen}
+                  />
+                  <Spotlight />
                   <About />
                   <Portfolio />
                   <Gallery />
@@ -117,6 +116,7 @@ const closeBar = () => {
               }
             />
             <Route path="/wip" element={<Workinprogress />} />
+            <Route path="/viewmore" element={<ViewMore />} />
           </Routes>
         </>
       )}

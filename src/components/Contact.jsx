@@ -27,7 +27,7 @@ export default function Contact() {
               </a>
             </span>
             <span className="icons">
-              <a href="https://www.linkedin.com/in/anees-n-706107212/">
+              <a href="https://www.linkedin.com/in/anees-nizam/">
                 <img src={linkedin} title="Linkedin" alt="linkedin" />
               </a>
             </span>
