@@ -1,11 +1,9 @@
 import React from "react";
 import "./ViewMore.css";
-
-// Navigation and Icon imports
+import ParticlesBackground from '../ParticlesBackground';
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 
-// Import all your project images
 import Cryptography from "../../assets/images/cryptography.png";
 import Chain from "../../assets/images/supplychain1.png";
 import Spendwise from "../../assets/images/spendwise.png";
@@ -15,7 +13,7 @@ import Project2 from "../../assets/images/gameproject.png";
 import TaskManagerImage from "../../assets/images/project1.png";
 import TurfBookingApp from "../../assets/images/goturfy.png";
 
-// --- DATA ARRAYS ---
+
 const academicProjects = [
   {
     id: "acad1",
@@ -174,6 +172,7 @@ export default function ViewMore() {
 
   return (
     <section className="view-more-page">
+      < ParticlesBackground />
       <button className="back-button" onClick={handleBack} title="Go Back">
         <IoIosArrowBack />
       </button>

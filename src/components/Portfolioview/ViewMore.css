@@ -4,9 +4,23 @@
   min-height: 100vh;
   width: 100%;
   padding: 60px 10% 50px;
-  position: relative;
-}
+ position: relative;
+  isolation: isolate;
+  overflow: hidden;
 
+}
+.back-button, .total-works-count, .project-category {
+    position: relative;
+    z-index: 1;
+}
+.particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* This is the key to sending it to the back */
+}
 .view-more-page h1 {
   text-align: center;
   font-size: 40px;

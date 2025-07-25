@@ -138,8 +138,16 @@ display: block;
   }
 }
 @media all and (max-width: 460px){
+  #book .scroll {
+
+  animation: none;
+}
+
+#book .down {
+  animation: none;
+}
   #book {
-gap: 40px;
+gap: 20px;
     height: 250px;
   }
   h1.textss{

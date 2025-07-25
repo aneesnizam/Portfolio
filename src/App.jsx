@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Loader from "./components/Loader";
 import Nav from "./components/Nav";
 import Spotlight from "./components/Spotlight";
@@ -23,6 +22,8 @@ import Certificate4 from "./assets/certificate/React.png";
 import ViewMore from "./components/Portfolioview/ViewMore";
 import BgImage1 from "./assets/images/table5.png";
 import BgImage2 from "./assets/images/me.png";
+import Experience from "./components/Experience";
+import Services from "./components/Services";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -105,6 +106,8 @@ export default function App() {
                   />
                   <Spotlight />
                   <About />
+                  <Experience />
+                   <Services />
                   <Portfolio />
                   <Gallery />
                   <Education />

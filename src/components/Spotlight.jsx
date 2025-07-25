@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Lhtml from "../assets/images/html icon.webp";
-import Lcss from "../assets/images/css icon.webp";
-import Ljs from "../assets/images/js icon.png";
+import Lhtml from "../assets/skills/html-icon.png";
+import Lcss from "../assets/skills/css-icon.png";
+import Ljs from "../assets/skills/js.png";
 import Lreact from "../assets/images/react icon.png";
 import Lpython from "../assets/images/python icon.webp";
 import "./spotlight.css";
@@ -59,15 +59,16 @@ export default function spotlight({ openBar }) {
             >
               <img src={Lreact} alt="" />
             </span>
+              <span className="box box3" onMouseEnter={() => handleclick("JS")}>
+              <img src={Ljs} alt="" />
+            </span>
             <span
-              className="box box3"
+              className="box box5"
               onMouseEnter={() => handleclick("Python")}
             >
               <img src={Lpython} alt="" />
             </span>
-            <span className="box box5" onMouseEnter={() => handleclick("JS")}>
-              <img src={Ljs} alt="" />
-            </span>
+          
           </div>
           <h1 className="monitor">{displayedText}</h1>
         </div>

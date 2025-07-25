@@ -9,6 +9,7 @@ import { SiDjango, SiPostgresql, SiTailwindcss } from "react-icons/si";
 export default function About() {
   return (
     <section id="about">
+       
       <div className="me">
         <h3>Hello, I'm</h3>
         <h1>Anees</h1>
