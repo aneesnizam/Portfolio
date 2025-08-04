@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css"; // We will add styles here
-import Dp from "../assets/images/me.png";
+import Dp from "../assets/images/me2.jpeg";
 
 // Step 1: Import the icons for your main skills
 import { FaReact, FaGithub  } from "react-icons/fa";
